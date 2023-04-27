@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useEffect ,useRef} from "react";
+import Header from "./components/Header/Header";
+import ProductList from './components/ProductList/ProductList'
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "./redux/cart";
+import axios from "axios";
 
 function App() {
+  const {userDetail} = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const counterRef = useRef(1);
+
+  useEffect(() => {
+    fetchUser(counterRef.current);
+  },[]);
+
+  const loadMoreUser = () => {
+    fetchUser(++counterRef.current);
+  };
+
+  const fetchUser = async (id)=> {
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+
+    dispatch(updateUser(response.data));
+};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Fragment>
+       <Header/>
+      <button onClick={loadMoreUser}>Add User</button>
+      <pre style={{color:"white"}}>{JSON.stringify(userDetail,undefined,4)}</pre>
+      <ProductList/>
+   </Fragment>
   );
 }
 

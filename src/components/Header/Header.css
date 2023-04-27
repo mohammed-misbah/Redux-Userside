@@ -1,0 +1,28 @@
+header {
+    background-color: rgba(55, 54, 54, 0.637);
+    padding: 10 px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+}
+
+.cart-count-header{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(222, 200, 167);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.right-section{
+    position: relative;
+}
