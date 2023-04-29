@@ -1,0 +1,9 @@
+1. Provider
+2. Store 
+3. Reducer
+4. Action 
+
+Store = State
+Action = Button Click
+Reducer => State Update
+Provider => React will inject

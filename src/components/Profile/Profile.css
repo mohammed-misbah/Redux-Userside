@@ -1,0 +1,36 @@
+.profile-container{
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px gray;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    
+  }
+  .labell{
+    width: 400px;
+    max-width: 90vw;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  .label-value{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+  
+  }
+   .labell:nth-child(1){
+    margin-top: 10px;
+    border: 1px solid red;
+  }
+  
+  /* .labell:not(:last-child){
+    margin-top: 10px;
+  } */
